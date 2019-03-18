@@ -24,6 +24,9 @@ def lemmatize(w: str):
   if w in {'halves', 'calves', 'thieves'}:
     return f'{w[:-3]}f'
 
+  if w in {'wives'}:
+    return f'{w[:-3]}fe'
+
   """ match open syllables 'consonant + vowel + consonant + e' """
   match_op = re.match(
       r'^([pbtdfvlmnghkczrwsx]{1,3})([aiou])([pbtdfvlmnghkczr])(es|ed|ing|ings)$', w)
